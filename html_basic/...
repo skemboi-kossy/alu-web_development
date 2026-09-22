@@ -1,0 +1,134 @@
+cat > html_basic/base_index.html << 'EOF'
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sandy's Website</title>
+  </head>
+  <body>
+  </body>
+</html>
+EOF
+cat > html_basic/index.html << 'EOF'
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sandy's Website</title>
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tweets.html">Tweets</a></li>
+      </ul>
+    </header>
+    <main>
+      <article>
+        <h1>Welcome to My Website</h1>
+        <p>
+          Hi, I'm Sandy, a Software Engineering student at African Leadership
+          University. I'm passionate about building technology that creates
+          real opportunities for people.
+        </p>
+
+        <h2>My Mission</h2>
+        <p>
+          My long-term goal is to found a technology company that empowers
+          girls and women in rural Kenya through digital literacy and
+          economic opportunity.
+        </p>
+
+        <h3>Why It Matters</h3>
+        <p>
+          Access to technology and digital skills can change the trajectory
+          of a person's life. I want to help make that access more equal.
+        </p>
+
+        <p>
+          Feel free to look around, check out my other page, and see what
+          I'm working on.
+        </p>
+
+        <a href="https://www.holbertonschool.com" target="_blank">
+          <img
+            src="https://www.holbertonschool.com/holberton-logo.png"
+            alt="Holberton School logo"
+            width="200"
+          >
+        </a>
+      </article>
+      <aside>
+        <p>placeholder to add comment thread later</p>
+      </aside>
+    </main>
+    <footer>
+      <p>Made by Sandra Jepkosgei - <a href="https://github.com/" target="_blank">here</a></p>
+    </footer>
+  </body>
+</html>
+EOF
+cat > html_basic/tweets.html << 'EOF'
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sandy's Website - Tweets</title>
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tweets.html">Tweets</a></li>
+      </ul>
+    </header>
+    <main>
+      <article>
+        <h1>My Tweets</h1>
+        <p>Here's a tweet I found interesting:</p>
+
+        <blockquote class="twitter-tweet">
+          <p lang="en" dir="ltr">
+            To make our world a better place to live, we need to bring
+            everyone into the digital age.
+          </p>
+          &mdash; Holberton School (@holbertonschool)
+          <a href="https://twitter.com/holbertonschool/status/838632467394510848">
+            March 6, 2017
+          </a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <p><a href="index.html">Back to Home</a></p>
+      </article>
+      <aside>
+        <p>placeholder to add comment thread later</p>
+      </aside>
+    </main>
+    <footer>
+      <p>Made by Sandra Jepkosgei - <a href="https://github.com/" target="_blank">here</a></p>
+    </footer>
+  </body>
+</html>
+EOF
+cat > README.md << 'EOF'
+# alu-web-development
+
+Web development projects for ALU coursework, covering HTML, CSS, and JavaScript fundamentals.
+
+## html_basic
+
+An introduction to HTML: structuring valid pages, working with headings, paragraphs, links, and images, embedding external content, and building a consistent multi-page layout with `<header>`, `<main>`, and `<footer>`.
+
+**Files:**
+- `base_index.html` — minimal valid HTML skeleton
+- `index.html` — homepage with headings, paragraphs, and a clickable image
+- `tweets.html` — secondary page with an embedded tweet
+
+All files are validated against the [W3C Validator](https://validator.w3.org/).
+
+## Author
+
+Sandra Jepkosgei
+EOF
+ls html_basic
