@@ -1,0 +1,380 @@
+/* ==========================================================
+   SmileSchool - styles.css
+   Values marked "FIGMA" are best guesses: check them in Figma
+   and change them in :root first, most colors live there.
+   ========================================================== */
+
+:root {
+  --navy: #071629;          /* from Figma: text color + dark sections */
+  --purple: #c271ff;        /* from Figma: quote bg, accents, buttons */
+  --text: #071629;
+  --container: 960px;
+  --wide: 1103px;           /* from Figma: header width */
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  color: var(--text);
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Shared: purple centered section titles */
+.videos h1,
+.membership h1,
+.faq h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.membership h1 b,
+.videos h1 span {
+  color: var(--purple);
+}
+
+/* Shared: pill buttons */
+button {
+  border: 0;
+  width: 162px;             /* from Figma: 162 x 44 */
+  height: 44px;
+  border-radius: 25px;      /* FIGMA: check the radius on button_background */
+  font-family: inherit;
+  font-size: 14px;          /* FIGMA: check text size */
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Shared: round images */
+.banner-info-item img,
+.quote-block > img,
+.video-author img {
+  border-radius: 50%;
+}
+
+/* ---------- Header ---------- */
+header {
+  position: absolute;      /* sits on top of the banner background */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(var(--wide), 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 0;
+}
+
+.header-menu a {
+  color: #fff;
+  margin-left: 30px;
+  font-size: 18px;
+}
+
+/* ---------- Banner ---------- */
+.banner {
+  padding-top: 120px;
+  background: url("images/banner_bg.jpg") center / cover no-repeat; /* FIGMA: file name */
+  text-align: center;
+  color: #fff;
+}
+
+.banner-description h1 {
+  font-family: "Spin Cycle OT", "Source Sans Pro", Arial, sans-serif;
+  font-size: 120px;         /* from Figma */
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.banner-description p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.banner-description button {
+  background: var(--purple);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 60px;
+}
+
+.banner-info h2 {
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.banner-info-items {
+  display: flex;
+  justify-content: space-between;
+  width: min(var(--container), 100%);
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+.banner-info-item {
+  width: 200px;
+  padding: 0 10px;
+}
+
+.banner-info-item img {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 15px;
+  object-fit: cover;
+}
+
+.banner-info-item h3 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.banner-info-item p {
+  font-style: italic;
+  font-size: 16px;
+}
+
+/* ---------- Quote ---------- */
+.quote {
+  background: var(--purple);
+  color: #fff;
+  padding: 60px 0;
+}
+
+.quote-block {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: min(800px, 100%);
+  margin: 0 auto;
+}
+
+.quote-block > img {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.quote-content blockquote {
+  margin: 0 0 20px;
+  font-size: 24px;
+}
+
+.quote-content p {
+  font-weight: bold;
+}
+
+.quote-content p + p {
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* ---------- Videos ---------- */
+.videos {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.videos-list {
+  display: flex;
+  gap: 20px;
+  width: min(1000px, 100%);
+  margin: 0 auto;
+}
+
+.video-item {
+  position: relative;
+  flex: 1;
+  padding-bottom: 16px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.video-item > img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* Player icon centered on the thumbnail (160px tall) */
+.video-item::before {
+  content: "";
+  position: absolute;
+  top: 48px;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  margin-left: -32px;
+  background: url("images/play.png") center / contain no-repeat; /* FIGMA: icon file name */
+}
+
+.video-item > :not(img) {
+  padding: 0 16px;
+}
+
+.video-item h2 {
+  font-size: 20px;
+  margin: 16px 0 8px;
+}
+
+.video-item > p {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.video-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.video-author img {
+  width: 30px;
+  height: 30px;
+}
+
+.video-author h3 {
+  color: var(--purple);
+  font-size: 16px;
+}
+
+.video-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stars {
+  display: flex;
+  gap: 3px;
+}
+
+.stars img {
+  width: 15px;
+}
+
+.video-rating p {
+  color: var(--purple);
+  font-size: 14px;
+}
+
+/* ---------- Membership ---------- */
+.membership {
+  background: var(--navy);
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.membership-items {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  width: min(var(--container), 100%);
+  margin: 0 auto 50px;
+}
+
+.membership-item {
+  flex: 1;
+}
+
+.membership-item img {
+  margin: 0 auto 15px;   /* icon asset should already be purple */
+}
+
+.membership-item h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.membership-item p {
+  font-size: 16px;
+}
+
+.membership button {
+  background: var(--purple);
+  color: #fff;
+}
+
+/* ---------- FAQ ---------- */
+.faq {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.faq-rows {
+  width: min(920px, 100%);
+  margin: 0 auto;
+}
+
+.faq-row {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.faq-item {
+  flex: 1;
+}
+
+.faq-item h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  font-size: 16px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: var(--navy);
+  color: #fff;
+  padding: 40px 0 20px;
+}
+
+.footer-container {
+  width: min(var(--wide), 100%);
+  margin: 0 auto 30px;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links img {
+  width: 30px;
+}
+
+footer > p {
+  text-align: center;
+  font-size: 14px;
+}
